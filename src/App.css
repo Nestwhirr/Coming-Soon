@@ -5,38 +5,103 @@
   text-align: center;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.content {
+  max-width: 50%;
+  text-align: left;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+
+.tagline {
+  font-style: italic;
+  margin-bottom: 2em;
+}
+
+form {
+  display: flex;
+  margin-top: 2em;
+}
+
+input[type="email"] {
+  flex-grow: 1;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+.illustration {
+  max-width: 45%;
+}
+
+.illustration img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .content, .illustration {
+    max-width: 100%;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .illustration {
+    margin-top: 2em;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
