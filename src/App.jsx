@@ -41,7 +41,6 @@ function App() {
   const [email, setEmail] = useState('')
   const [showAlert, setShowAlert] = useState(false)
   const [showConfetti, setShowConfetti] = useState(false)
-  const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -57,11 +56,10 @@ function App() {
         setShowAlert(true);
         setShowConfetti(true);
         setEmail(''); // Clear the email input
-        setErrorMessage(''); // Clear any previous error
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
-        setErrorMessage("An error occurred. Please try again later.");
+        // Optionally, you can show an error message to the user here
       });
   }
 
@@ -130,31 +128,6 @@ function App() {
                 </AlertTitle>
                 <AlertDescription maxWidth="sm">
                   We'll keep you updated on our launch. Stay tuned!
-                </AlertDescription>
-              </Alert>
-            </ScaleFade>
-          )}
-          {errorMessage && (
-            <ScaleFade initialScale={0.9} in={!!errorMessage}>
-              <Alert
-                status="error"
-                variant="subtle"
-                flexDirection="column"
-                alignItems="center"
-                justifyContent="center"
-                textAlign="center"
-                height="200px"
-                bg="red.500"
-                color="white"
-                borderRadius="md"
-                boxShadow="0 4px 6px rgba(255, 0, 0, 0.25)"
-              >
-                <AlertIcon boxSize="40px" mr={0} color="white" />
-                <AlertTitle mt={4} mb={1} fontSize="lg">
-                  Oops! Something went wrong.
-                </AlertTitle>
-                <AlertDescription maxWidth="sm">
-                  {errorMessage}
                 </AlertDescription>
               </Alert>
             </ScaleFade>
