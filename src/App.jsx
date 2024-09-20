@@ -47,7 +47,11 @@ function App() {
     e.preventDefault();
     
     const formData = new FormData(e.target);
-    
+    const email = formData.get('email');
+    const name = email.split('@')[0]; // Extract the name from the email
+
+    formData.append('name', name); // Add the name to the form data
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
