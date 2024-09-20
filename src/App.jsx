@@ -43,7 +43,6 @@ function App() {
   const [showConfetti, setShowConfetti] = useState(false)
 
   const handleSubmit = (e) => {
-    e.preventDefault()
     // Netlify will handle form submission
     setShowAlert(true)
     setShowConfetti(true)
