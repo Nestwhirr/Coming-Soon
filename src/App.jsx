@@ -62,6 +62,7 @@ function App() {
         setShowConfetti(true);
         setEmail(''); // Clear the email input
         setErrorMessage(''); // Clear any previous error message
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top on form submission
       })
       .catch((error) => {
         console.error("Error submitting form:", error);
